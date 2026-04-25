@@ -16,16 +16,6 @@ let marker;
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	
-// try {
-//     if (!document.fullscreenElement) {
-//       await document.documentElement.requestFullscreen();
-//     }
-//   } catch (err) {
-//     console.log("Fullscreen blocked:", err);
-//   }
-
-
-
   search = document.getElementById("search-input").value;
   getIP(search);
 });
@@ -95,7 +85,7 @@ console.log(data);
     const [lat, long] = data.loc.split(",").map(Number);
 
     output_ip.innerText = data.ip;
-		city.innerText = data.city;
+		city.innerText = data.city+',';
 		country_and_postal.innerText = data.postal ? data.country + " " + data.postal : data.country;
 		info_time_zone.innerText = getUTCOffset(data.timezone);
 		company_name_first_part.innerText = data.org.split(" ")[1];
@@ -115,7 +105,8 @@ console.log(data);
   const [lat, long] = data.loc.split(",").map(Number);
 	
   output_ip.innerText = data.ip;
-	city.innerText = data.city;
+	city.innerText = data.city+',';
+	// country_and_postal.innerText = data.postal? data.country + " " + data.postal : data.country;
 	country_and_postal.innerText = data.postal? data.country + " " + data.postal : data.country;
 	info_time_zone.innerText = getUTCOffset(data.timezone);
 	company_name_first_part.innerText = data.org.split(" ")[1];
