@@ -42,11 +42,6 @@ function initMap(lat, long) {
     worldCopyJump: true,
 	}).setView([lat, long], 13);
 	
-	// map.panBy([0, -150]);
-
-// 	setTimeout(() => {
-//   map.panBy([0, -150]);
-	// }, 0);
 	
 	map.panBy([0, -50], { animate: false });
 
