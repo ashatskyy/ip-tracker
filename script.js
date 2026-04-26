@@ -42,8 +42,7 @@ function initMap(lat, long) {
     worldCopyJump: true,
 	}).setView([lat, long], 13);
 	
-	
-	map.panBy([0, -50], { animate: false });
+	map.panBy([0, -53], { animate: false });
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -66,9 +65,12 @@ function initMap(lat, long) {
 }
 
 function updateMap(lat, long) {
-  map.setView([lat, long], 13);
+	map.setView([lat, long], 13);
+	map.panBy([0, -53], { animate: false });
+	
   marker.setLatLng([lat, long]);
 }
+
 
 async function resolveDomain(domain) {
   const res = await fetch(`https://dns.google/resolve?name=${domain}`);
